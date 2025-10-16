@@ -1,0 +1,659 @@
+/* Весь CSS залишається незмінним, додаю лише нові стилі для кнопок інфо */
+
+.info-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.info-btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.info-btn:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* Стилі для інформаційних блоків */
+.info-section {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.info-section h4 {
+  margin: 0 0 8px 0;
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.weapon-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.weapon-card {
+  padding: 8px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.01);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.weapon-card.sword {
+  border-left: 3px solid #60a5fa;
+}
+
+.weapon-card.axe {
+  border-left: 3px solid #f97373;
+}
+
+.weapon-card.bow {
+  border-left: 3px solid #10b981;
+}
+
+.weapon-card h5 {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.weapon-card ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.weapon-card li {
+  font-size: 11px;
+  margin-bottom: 2px;
+  color: var(--muted);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.location-item {
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.01);
+  border-left: 3px solid var(--accent);
+}
+
+.location-item h6 {
+  margin: 0 0 4px 0;
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.upgrade-info {
+  margin-top: 8px;
+}
+
+.upgrade-item {
+  padding: 6px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.01);
+  border-left: 3px solid var(--success);
+}
+
+/* Решта CSS залишається незмінною */
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #60a5fa;
+  --muted: #94a3b8;
+  --success: #10b981;
+  --danger: #f97373;
+  --warning: #f59e0b;
+  --glass: rgba(255,255,255,0.03);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #071029 0%, #071a2b 40%, #02111a 100%);
+  color: #e6eef6;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 980px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(2,6,23,0.7);
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 18px;
+}
+
+.panel {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+h2 {
+  margin: 6px 0 12px 0;
+  font-size: 18px;
+  color: var(--accent);
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: var(--glass);
+  color: inherit;
+  outline: none;
+}
+
+select option[value="меч"] {
+  background: var(--card);
+  color: #60a5fa;
+}
+
+select option[value="сокира"] {
+  background: var(--card);
+  color: #f97373;
+}
+
+select option[value="лук"] {
+  background: var(--card);
+  color: #10b981;
+}
+
+select option[value="без броні"] {
+  background: var(--card);
+  color: var(--muted);
+}
+
+select option[value="легка"] {
+  background: var(--card);
+  color: #60a5fa;
+}
+
+select option[value="середня"] {
+  background: var(--card);
+  color: #f59e0b;
+}
+
+select option[value="важка"] {
+  background: var(--card);
+  color: #f97373;
+}
+
+.locations {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.locbtn {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.03);
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.locbtn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(96,165,250,0.06);
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.btn {
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: var(--accent);
+  color: #072036;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(96,165,250,0.3);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  color: var(--muted);
+}
+
+.btn.ghost:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.stat {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.stat .card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.02);
+  min-width: 120px;
+}
+
+.log {
+  height: 420px;
+  overflow: auto;
+  padding: 10px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+  border: 1px solid rgba(255,255,255,0.02);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  font-size: 13px;
+  color: #d6e7ff;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.attackbtn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  cursor: pointer;
+  background: transparent;
+  color: var(--muted);
+  transition: all 0.2s ease;
+}
+
+.attackbtn:hover {
+  background: rgba(255,255,255,0.05);
+  transform: translateY(-1px);
+}
+
+.attackbtn.active {
+  background: rgba(16,185,129,0.08);
+  border-color: rgba(16,185,129,0.18);
+  color: var(--success);
+}
+
+.small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.right-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shop, .upgrade {
+  margin-top: 10px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+footer {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+.round-container {
+  margin-bottom: 16px;
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.02);
+  transition: all 0.3s ease;
+}
+
+.round-container:last-child {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.round-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.round-number {
+  font-weight: bold;
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.round-result {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+}
+
+.round-success {
+  background: rgba(16,185,129,0.15);
+  color: var(--success);
+  border: 1px solid rgba(16,185,129,0.3);
+}
+
+.round-danger {
+  background: rgba(249,115,115,0.15);
+  color: var(--danger);
+  border: 1px solid rgba(249,115,115,0.3);
+}
+
+.round-warning {
+  background: rgba(245,158,11,0.15);
+  color: var(--warning);
+  border: 1px solid rgba(245,158,11,0.3);
+}
+
+.damage-success {
+  color: var(--success);
+  font-weight: bold;
+}
+
+.damage-danger {
+  color: var(--danger);
+  font-weight: bold;
+}
+
+.damage-warning {
+  color: var(--warning);
+  font-weight: bold;
+}
+
+.player-name {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.player-name.success {
+  color: var(--success);
+  text-shadow: 0 0 8px rgba(16,185,129,0.3);
+}
+
+.enemy-name {
+  color: var(--muted);
+  font-weight: bold;
+}
+
+.enemy-name.danger {
+  color: var(--danger);
+  text-shadow: 0 0 8px rgba(249,115,115,0.3);
+}
+
+.battle-won {
+  background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.05));
+  border: 1px solid rgba(16,185,129,0.2);
+}
+
+.battle-lost {
+  background: linear-gradient(135deg, rgba(249,115,115,0.1), rgba(249,115,115,0.05));
+  border: 1px solid rgba(249,115,115,0.2);
+}
+
+.weapon-info {
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.02);
+  border-left: 3px solid var(--accent);
+}
+
+.weapon-info.axe {
+  border-left-color: var(--danger);
+}
+
+.weapon-info.bow {
+  border-left-color: var(--success);
+}
+
+.weapon-info h5 {
+  margin: 0 0 4px 0;
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.weapon-info.axe h5 {
+  color: var(--danger);
+}
+
+.weapon-info.bow h5 {
+  color: var(--success);
+}
+
+.weapon-info ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.weapon-info li {
+  font-size: 11px;
+  margin-bottom: 2px;
+  color: var(--muted);
+}
+
+.instructions-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.instructions-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.instructions-window {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(2, 6, 23, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.instructions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.instructions-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.instructions-tab {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.instructions-tab:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.instructions-tab.active {
+  background: var(--accent);
+  color: #072036;
+  border-color: var(--accent);
+}
+
+.instructions-content {
+  display: none;
+}
+
+.instructions-content.active {
+  display: block;
+}
+
+.instructions-section {
+  margin-bottom: 20px;
+}
+
+.instructions-section h4 {
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.instructions-section p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.instructions-list {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.instructions-list li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.instructions-close {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.instructions-close:hover {
+  color: var(--accent);
+}
+
+.instructions-btn {
+  margin-top: 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.instructions-btn:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.2);
+}
+
+@media (max-width: 920px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+  .log {
+    height: 300px;
+  }
+  .weapon-details {
+    grid-template-columns: 1fr;
+  }
+}
